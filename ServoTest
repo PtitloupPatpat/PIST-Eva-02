@@ -1,1 +1,23 @@
 include <Servo.h>
+
+Servo myServo;
+
+int position;
+int positionMax = 180;
+int positionMin = 0;
+int pinServo = 9;
+
+void setup(){
+  myServo.attach(pinServo);
+}
+
+void loop(){
+  for(position = positionMin; position <= positionMax; position += 1){
+    myServo.write(position);
+    delay(15);
+  }
+for(position = positionMax; position >= positionMin; position -= 1){
+  myServo.write(position);
+  delay(15);
+  }
+}
